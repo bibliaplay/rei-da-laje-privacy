@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exclusão de dados — Rei da Laje</title>
+<style>
+:root{color-scheme:light only}
+html{background:#fff;color:#1a1a1a}
+body{font-family:system-ui,sans-serif;max-width:640px;margin:auto;padding:20px;line-height:1.55}
+label{display:block;margin-top:14px;font-weight:600}
+input{width:100%;box-sizing:border-box;padding:10px;font-size:16px;border:1px solid #bbb;border-radius:8px;margin-top:4px}
+button{margin-top:18px;padding:12px 18px;font-size:16px;border:0;border-radius:8px;background:#0b57d0;color:#fff;cursor:pointer}
+small{color:#555}
+a{color:#0b57d0}
+</style>
+</head>
+<body>
+<h1>Exclusão de dados — Rei da Laje</h1>
+<p>O <b>Rei da Laje: Combate de Pipa</b> não pede conta, nome real, e-mail nem login. Seu apelido, avatar e progresso ficam salvos no seu aparelho e são apagados quando você desinstala o app ou limpa os dados dele.</p>
+<p>Para o ranking e o backup na nuvem, nosso servidor guarda só um identificador anônimo, o apelido, o avatar escolhido, o país (código de 2 letras) e o progresso no jogo. Se quiser que a gente apague esses dados, preencha abaixo. A exclusão é feita em até 30 dias.</p>
+<form id="f">
+<label for="email">Seu e-mail</label>
+<input id="email" type="email" required placeholder="voce@exemplo.com">
+<label for="apelido">Seu apelido no jogo (opcional, ajuda a achar seus dados)</label>
+<input id="apelido" type="text" placeholder="Ex.: ReiDaLaje#1234">
+<button type="submit">Pedir exclusão dos meus dados</button>
+</form>
+<p><small>Ao enviar, abre o seu aplicativo de e-mail com o pedido pronto. Se não abrir, mande um e-mail para <a href="mailto:estudiobplay@gmail.com?subject=Exclus%C3%A3o%20de%20dados%20-%20Rei%20da%20Laje">estudiobplay@gmail.com</a> com o assunto "Exclusão de dados - Rei da Laje".</small></p>
+<p><small><a href="privacy.html">Política de Privacidade</a></small></p>
+<script>
+document.getElementById('f').addEventListener('submit',function(e){
+e.preventDefault();
+var em=document.getElementById('email').value.trim();
+var ap=document.getElementById('apelido').value.trim();
+var body='Quero excluir meus dados do Rei da Laje.\n\nMeu e-mail: '+em+'\nMeu apelido: '+(ap||'(não informado)');
+location.href='mailto:estudiobplay@gmail.com?subject='+encodeURIComponent('Exclusão de dados - Rei da Laje')+'&body='+encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
